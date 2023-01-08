@@ -1,0 +1,25 @@
+<form #myFirstform="ngForm" (submit) ="submitMyFirstForm(myFirstform.value)">
+  
+    <p>First Name: <input name= 'firstname' ngModel></p>
+    <p>Last Name: <input name= 'lastname' ngModel></p>
+    <p>
+      Choose Option<input type="checkbox"  value="ap" ngModel> AP
+     <input type="checkbox"  value="tn" ngModel> TN
+    </p>
+    <p> Gender: 
+      <input type="radio" ngModel name="gender" value="male">Male
+      <input type="radio" ngModel name="gender" value="female">Female
+    </p>
+    <p>
+      Enter Text:
+    </p>
+
+<textarea cols="25" rows="10" maxlength="100" [(ngModel)] ="txtValue"></textarea>
+
+  <fieldset ngModelGroup="address">
+    <p>City: <input name= 'city' ngModel></p>
+    <p>Zip: <input name= 'zip' ngModel></p>
+  </fieldset>
+  <button type="submit" class="btn btn-secondary" [disabled]="myFirstform.invalid">Submit</button>
+  {{myFirstform.value | json}}
+</form>

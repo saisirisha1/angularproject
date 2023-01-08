@@ -1,0 +1,91 @@
+
+<!-- FIRST SCENARIO (TEXT SHOW AND HIDE) -->
+<!-- <h2 *ngIf="showOffersText">Top Offers</h2>
+<button (click)="onDisplayOffers()">Offers show/hide</button>
+<hr> -->
+
+<!-- SECOND SCENARIO (PASSWORD SHOW AND HIDE) -->
+<!-- <input type="{{ displayPassword ? 'text' : 'password' }}">
+<button (click)="showPassword()">{{displayPassword ? 'myPasswordHide': 'myPasswordShow'}}</button>
+<hr> -->
+
+
+<!-- THIRD SCENARIO (ADDITION & SUBTRACTION) -->
+<!-- NUMBER 1<input type="number" [(ngModel)]="value1">
+NUMBER 2<input type="number" [(ngModel)]="value2">
+
+<div> Addition is {{value1+value2}}</div>
+<div> subtraction is {{value1-value2}}</div>
+<hr> -->
+
+
+<!-- FOURTH SCENARIO (TEXT AREA FILLING MAX LENGTH 100)-->
+<!-- <textarea cols="25" rows="10" maxlength="100" [(ngModel)] ="txtValue"></textarea>
+<h4>maximum length allowed is {{100-txtValue.length}}</h4>
+<hr>
+
+<input type="number" #n1>
+<input type="number" ref-n2>
+
+<button (click)="addition(n1.value,n2.value)">ADD</button>
+<div>The Final Result is {{answer}}</div> -->
+
+ <!-- <button class="btn-primary" (click)="sortAscending()">sortAscending</button>
+  <button class="btn-primary" (click)="sortDescending()">sortDescending</button> -->
+<!-- <table class="table table-bordered table-striped">
+  <input type="search" [(ngModel)]="searchingKeyword"/>
+    <thead>
+        <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let emp of employees">
+          <td>{{emp.eId}}</td>
+          <td>{{emp.name | addtitle: emp.gender}}</td>
+          <td>{{emp.sal}}</td>
+          <td>{{emp.gender}}</td> 
+        </tr>
+    </tbody>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</table>
+<app-parent></app-parent> -->
+
+<!-- <table class="table table-bordered table-striped">
+  <input type="search" [(ngModel)]="searchingKeyword"/>
+  <button class="btn-primary" (click)="sortAscending()">sortAscending</button>
+  <button class="btn-primary" (click)="sortDescending()">sortDescending</button>
+    <thead>
+        <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products | paginate: { itemsPerPage: 5, currentPage: p } | filter: searchingKeyword">
+          <td> <img src={{product.imgUrl}}  width="100" height="100"/> </td>
+          <td>{{product.name}}</td>
+          <td>{{product.price}}</td>  
+        </tr>
+    </tbody>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</table> -->
+<div class ="card-style">
+  <input type="search" [(ngModel)]="searchingKeyword">
+<div class="card" style="width: 18rem;" *ngFor="let product of products | paginate: { itemsPerPage: 5, currentPage: p } | filter: searchingKeyword">
+    <img class="card-img-top" src="{{product.imgUrl}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{product.name}}</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <p class="card-text"> {{product.price}}</p>
+      </div>
+      <button class="button-secondary" [routerLink]="['/productdetails', product.id]">Details</button>
+      <button class="button primary" [routerLink]="['/productdetailbyqueryparam']" [queryParams]="{id:product.id,title:product.title,price:product.price}"> View Details</button>
+      <!-- <pagination-controls (pageChange)="p =$event"></pagination-controls> -->
+  </div>
+  
+
+</div> 

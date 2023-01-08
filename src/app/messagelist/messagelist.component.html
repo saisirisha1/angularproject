@@ -1,0 +1,17 @@
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+        <th>S.No</th>
+        <th>Message Title</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor ="let msg of messages, let i=index">
+            <td>{{i+1}}</td>
+            <td>{{msg.text}}</td>
+        </tr>
+    </tbody>
+</table>
+
+

@@ -1,0 +1,44 @@
+<!-- <table class="table table-bordered table-striped">
+      <thead>
+          <tr>
+          <th>Post Id</th>
+          <th>Id</th>
+          <th>Name</th>
+          <th>email</th>
+          <th>Body</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let comment of comments">
+            <td>{{comment.postId}}</td>
+            <td>{{comment.id }}</td>
+            <td>{{comment.name}}</td>
+            <td>{{comment.email}}</td> 
+            <td>{{comment.body}}</td> 
+          </tr>
+      </tbody>
+  </table> -->
+
+  <table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+  
+        <th>Id</th>
+        <th>Name</th>
+        <th>username</th>
+        <th>email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of employees">
+         
+          <td>{{employee.id }}</td>
+          <td>{{employee.name}}</td>
+          <td>{{employee.username}}</td> 
+          <td>{{employee.email}}</td> 
+          <td>
+            <button class="btn btn-danger" (click)="deleteUser(employee.id)">Del</button>
+          </td>
+        </tr>
+    </tbody>
+</table>
