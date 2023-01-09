@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class CanactivateGuard implements CanActivate {
 
-  role='staff';
+  role='manager';
 
   canActivate(
     route: ActivatedRouteSnapshot,
